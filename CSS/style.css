@@ -5,38 +5,37 @@ header {
 #navigation-link {
   width: 10%;
   min-height: 100vh;
-  background: #454445;
+  background: #81da15;
   border: 1px solid transparent;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  border-radius: 10px;
+  justify-content: space-around;
 }
 #navigation-link a {
   display: block;
-  text-decoration: none;
-  color: white;
+  color: #ffffff;
   position: relative;
   margin: 10px 0;
   padding: 5px 10px;
   border-radius: 5px;
   text-align: center;
-  font-style: 1rem;
+  font-size: 1rem;
 }
 #navigation-link a i {
   font-size: 1.2rem;
 }
 #navigation-link a span {
-  color: #454445;
+  background-color: white;
+  color: #353535;
   position: absolute;
   left: 110%;
   top: 0;
-  border: 1px solid #454445;
+  border: 1px solid currentColor;
   padding: 5px 10px;
   border-radius: 5px;
   text-align: center;
-  font-style: 1rem;
+  font-size: 1rem;
   display: none;
   transition: display 0.9s ease-in;
 }
@@ -45,13 +44,66 @@ header {
 }
 #navigation-link a:hover {
   background-color: white;
-  color: #454445;
+  color: #353535;
   border: 1px solid currentColor;
 }
 
+@media screen and (max-width: 400px) {
+  header {
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: #81da15;
+    position: fixed;
+  }
+  header button {
+    background-color: #81da15;
+    color: #ffffff;
+    height: 30px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  header button:hover {
+    background-color: #29dc00;
+  }
+  #navigation-link {
+    position: absolute;
+    width: 200px;
+    min-width: 50%;
+    top: 30px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: none;
+  }
+  #navigation-link a {
+    text-align: left;
+    margin: 5px 10px;
+  }
+  #navigation-link a span {
+    color: #353535;
+    display: inline;
+    position: static;
+    border: none;
+  }
+  #navigation-link a i {
+    color: #29dc00;
+  }
+  #navigation-link a:hover {
+    border-color: transparent;
+    border-radius: 0;
+    border-bottom-color: #353535;
+  }
+  #navigation-link:hover {
+    display: flex;
+  }
+}
 * {
   margin: 0;
   padding: 0;
   list-style-type: none;
   box-sizing: border-box;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

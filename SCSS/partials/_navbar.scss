@@ -5,27 +5,27 @@
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
-    font-style: 1rem;
+    font-size: 1rem;
 }
-header{
-   display: none;
+
+header {
+    display: none;
 }
 
 #navigation-link {
     width: 10%;
     min-height: 100vh;
-    background: $accent-color;
+    background: $primary-color;
     border: 1px solid transparent;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 10px;
+    justify-content: space-around;
+
 
     a {
         display: block;
-        text-decoration: none;
-        color: $primary-color;
+        color: $text-light;
         position: relative;
         margin: 10px 0;
         @include button-style;
@@ -35,11 +35,12 @@ header{
         }
 
         span {
-            color: $accent-color;
+            background-color: $background-color;
+            color: $text-dark;
             position: absolute;
             left: 110%;
             top: 0;
-            border: 1px solid $accent-color;
+            border: 1px solid currentColor;
             @include button-style;
             display: none;
             transition: display 0.9s ease-in;
@@ -50,8 +51,8 @@ header{
         }
 
         &:hover {
-            background-color: $primary-color;
-            color: $accent-color;
+            background-color: $background-color;
+            color: $text-dark;
             border: 1px solid currentColor;
         }
 
@@ -59,59 +60,61 @@ header{
 
 }
 
-// @media screen and (max-width : $small-device) {
-//     header{
-//         background-color: $accent-color;
-//         width: 100%;
-//         min-height: 20px;
-//         position: fixed;
-//     }
-//     #navigation-link {
-//         position: relative;
+@media screen and (max-width : $small-device) {
+    header {
+        display: block;
+        width: 100%;
+        height: 30px;
+        background-color: $primary-color;
+        position: fixed;
 
-//         button {
-//             display: block;
-//             background-color: $accent-color;
-//             color: $primary-color;
-//             border: none;
-//             @include button-style;
-//         }
+        button {
+            background-color: $primary-color;
+            color: $text-light;
+            height: 30px;
+            border: none;
+            @include button-style;
 
-//         button:hover{
-//             background-color: $accent-color-dark;
-//         }
+            &:hover {
+                background-color: $primary-color-dark;
+            }
+        }
+    }
 
-//         #nav-list {
-//             position: absolute;
-//             display: none;
-//         }
-//         a{
-//             color: $accent-color;
-//             text-align: left;
-            
-//             position: static;
+    #navigation-link {
+        position: absolute;
+        width: 200px;
+        min-width: 50%;
+        top: 30px;
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+        background-color: $background-color;
+        display: none;
 
-//             span{
-//                 display: inline;
-//                 position: static;
-//                 border: none;
-//             }
-            
-//             &:hover{
-//                 border: none;
-//                 border-radius: 0;
-//                 border-bottom: 1px solid $accent-color;
-//             }
-//         }
+        a {
+            text-align: left;
+            margin: 5px 10px;
 
-        
-//         &:hover>#nav-list{
-//             display: block;
-         
-//             box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
-           
-//         }
+            span {
+                color: $text-dark;
+                display: inline;
+                position: static;
+                border: none;
+            }
 
+            i {
+                color: $primary-color-dark;
+            }
 
-//     }
-// }
+            &:hover {
+                border-color: transparent;
+                border-radius: 0;
+                border-bottom-color: $text-dark;
+            }
+        }
+
+        &:hover {
+            display: flex;
+        }
+
+    }
+}
