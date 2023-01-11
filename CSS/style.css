@@ -4,9 +4,14 @@ header {
 
 #navigation-link {
   width: 10%;
-}
-#navigation-link button {
-  display: none;
+  min-height: 100vh;
+  background: #454445;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
 }
 #navigation-link a {
   display: block;
