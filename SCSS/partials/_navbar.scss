@@ -8,13 +8,11 @@
     font-style: 1rem;
 }
 header{
-    width: 10%;
-    min-height: 100vh;
-    background: $accent-color;
-    border: 1px solid transparent;
+   display: none;
 }
 
 #navigation-link {
+    width: 10%;
     button {
         display: none;
     }
@@ -56,59 +54,59 @@ header{
 
 }
 
-@media screen and (max-width : $small-device) {
-    header{
-        background-color: $accent-color;
-        width: 100%;
-        min-height: 20px;
-        position: fixed;
-    }
-    #navigation-link {
-        position: relative;
+// @media screen and (max-width : $small-device) {
+//     header{
+//         background-color: $accent-color;
+//         width: 100%;
+//         min-height: 20px;
+//         position: fixed;
+//     }
+//     #navigation-link {
+//         position: relative;
 
-        button {
-            display: block;
-            background-color: $accent-color;
-            color: $primary-color;
-            border: none;
-            @include button-style;
-        }
+//         button {
+//             display: block;
+//             background-color: $accent-color;
+//             color: $primary-color;
+//             border: none;
+//             @include button-style;
+//         }
 
-        button:hover{
-            background-color: $accent-color-dark;
-        }
+//         button:hover{
+//             background-color: $accent-color-dark;
+//         }
 
-        #nav-list {
-            position: absolute;
-            display: none;
-        }
-        a{
-            color: $accent-color;
-            text-align: left;
+//         #nav-list {
+//             position: absolute;
+//             display: none;
+//         }
+//         a{
+//             color: $accent-color;
+//             text-align: left;
             
-            position: static;
+//             position: static;
 
-            span{
-                display: inline;
-                position: static;
-                border: none;
-            }
+//             span{
+//                 display: inline;
+//                 position: static;
+//                 border: none;
+//             }
             
-            &:hover{
-                border: none;
-                border-radius: 0;
-                border-bottom: 1px solid $accent-color;
-            }
-        }
+//             &:hover{
+//                 border: none;
+//                 border-radius: 0;
+//                 border-bottom: 1px solid $accent-color;
+//             }
+//         }
 
         
-        &:hover>#nav-list{
-            display: block;
+//         &:hover>#nav-list{
+//             display: block;
          
-            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+//             box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
            
-        }
+//         }
 
 
-    }
-}
+//     }
+// }

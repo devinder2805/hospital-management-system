@@ -1,10 +1,10 @@
 header {
-  width: 10%;
-  min-height: 100vh;
-  background: #454445;
-  border: 1px solid transparent;
+  display: none;
 }
 
+#navigation-link {
+  width: 10%;
+}
 #navigation-link button {
   display: none;
 }
@@ -44,53 +44,6 @@ header {
   border: 1px solid currentColor;
 }
 
-@media screen and (max-width: 400px) {
-  header {
-    background-color: #454445;
-    width: 100%;
-    min-height: 20px;
-    position: fixed;
-  }
-  #navigation-link {
-    position: relative;
-  }
-  #navigation-link button {
-    display: block;
-    background-color: #454445;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-align: center;
-    font-style: 1rem;
-  }
-  #navigation-link button:hover {
-    background-color: #383838;
-  }
-  #navigation-link #nav-list {
-    position: absolute;
-    display: none;
-  }
-  #navigation-link a {
-    color: #454445;
-    text-align: left;
-    position: static;
-  }
-  #navigation-link a span {
-    display: inline;
-    position: static;
-    border: none;
-  }
-  #navigation-link a:hover {
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #454445;
-  }
-  #navigation-link:hover > #nav-list {
-    display: block;
-    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
-  }
-}
 * {
   margin: 0;
   padding: 0;
