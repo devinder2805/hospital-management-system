@@ -36,7 +36,7 @@ header {
 
         span {
             background-color: $background-color;
-            color: $text-dark;
+            color: $primary-color;
             position: absolute;
             left: 110%;
             top: 0;
@@ -52,7 +52,7 @@ header {
 
         &:hover {
             background-color: $background-color;
-            color: $text-dark;
+            color: $primary-color;
             border: 1px solid currentColor;
         }
 
@@ -96,19 +96,20 @@ header {
 
             span {
                 color: $text-dark;
+                background-color: inherit;
                 display: inline;
                 position: static;
                 border: none;
             }
 
             i {
-                color: $primary-color-dark;
+                color: $primary-color;
             }
 
             &:hover {
                 border-color: transparent;
                 border-radius: 0;
-                border-bottom-color: $text-dark;
+                background-color: $background-light-dark;
             }
         }
 
