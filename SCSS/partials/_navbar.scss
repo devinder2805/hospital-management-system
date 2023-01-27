@@ -1,2 +1,136 @@
 @use '../utils' as *;
 
+@mixin button-style($color : $primary-color, $align : center) {
+    color: $color;
+    text-align: $align;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+@media screen and (min-width:$large-device) {
+    #navigation-link {
+        background-color: $primary-color;
+
+        button {
+            display: none;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+        }
+
+        a {
+            display: block;
+            margin: 10px 2px;
+            @include button-style($background-color);
+            border: none;
+            position: relative;
+            font-size: 1.5rem;
+        }
+
+        a:hover::after {
+            content: "";
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            background-color: $primary-color;
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            border-right: 1px solid $background-color;
+            border-top: 1px solid $background-color;
+
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 115%;
+            @include button-style();
+            background: $background-color;
+            display: none;
+        }
+
+        a:hover {
+            border: 1px solid;
+            background-color: $primary-color;
+        }
+
+        a:hover>span {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width : $large-device) {
+    #navigation-link {
+        background-color: $primary-color;
+        padding: 0px;
+        position: relative;
+    }
+
+    button {
+        height: 40px;
+        padding: 0px 20px;
+        font-size: 1.2rem;
+        text-align: center;
+        background-color: $primary-color;
+        border: none;
+        color: $background-color;
+        cursor: pointer;
+
+    }
+
+    button:hover {
+        background-color: $primary-color-dark;
+
+        &+div {
+            display: block;
+        }
+    }
+
+    div {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        min-height: calc(100vh - 30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+        display: none;
+
+        &:hover {
+            display: block;
+        }
+    }
+
+
+
+    a {
+        display: block;
+        padding: 5px 10px;
+        margin: 10px 0;
+        color: $primary-color;
+        font-size: 1.2rem;
+        position: relative;
+    }
+
+    a:hover {
+        color: $primary-color-dark;
+        border-bottom: 2px solid currentColor;
+        background-color: $background-light-dark;
+    }
+
+    i {
+        margin-right: 10px;
+    }
+
+}
