@@ -8,15 +8,36 @@
     padding: 10px 10px;
 }
 
+#logo {
+    height: 40px;
+    width: 100px;
+
+    text {
+        font-size: 30px;
+        font-family: fantasy;
+        stroke: white;
+        stroke-width: 0.5;
+        fill: none;
+        letter-spacing: 2px;
+    }
+}
+
 @media screen and (min-width:$large-device) {
     #navigation-link {
         background-color: $primary-color;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        #logo {
+            margin: 30px auto 0px;
+        }
 
         button {
             display: none;
         }
 
-        div {
+        div#nav-items {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -55,6 +76,7 @@
             @include button-style();
             background: $background-color;
             display: none;
+            z-index: 10;
         }
 
         a:hover {
@@ -72,65 +94,73 @@
     #navigation-link {
         background-color: $primary-color;
         padding: 0px;
-        position: relative;
-    }
-
-    button {
-        height: 40px;
-        padding: 0px 20px;
-        font-size: 1.2rem;
-        text-align: center;
-        background-color: $primary-color;
-        border: none;
-        color: $background-color;
-        cursor: pointer;
-
-    }
-
-    button:hover {
-        background-color: $primary-color-dark;
-
-        &+div {
-            display: block;
-        }
-    }
-
-    div {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 20px;
-        min-height: calc(100vh - 30px);
+        position: fixed;
         display: flex;
-        flex-direction: column;
-        justify-content: start;
-        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-        display: none;
+        justify-content: space-between;
 
-        &:hover {
-            display: block;
+        #logo {
+            order: 2;
         }
+
+        button {
+            height: 40px;
+            padding: 0px 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            background-color: $primary-color;
+            border: none;
+            color: $background-color;
+            cursor: pointer;
+            order: 1;
+        }
+
+        button:hover {
+            background-color: $primary-color-dark;
+
+            &+div#nav-items {
+                display: block;
+            }
+        }
+
+        div#nav-items {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 20px;
+            min-height: calc(100vh - 40px);
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 100;
+            background-color: $background-color;
+
+            &:hover {
+                display: block;
+            }
+        }
+
+
+
+        a {
+            display: block;
+            padding: 5px 10px;
+            margin: 10px 0;
+            color: $primary-color;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        a:hover {
+            color: $primary-color-dark;
+            border-bottom: 2px solid currentColor;
+            background-color: $background-light-dark;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
     }
-
-
-
-    a {
-        display: block;
-        padding: 5px 10px;
-        margin: 10px 0;
-        color: $primary-color;
-        font-size: 1.2rem;
-        position: relative;
-    }
-
-    a:hover {
-        color: $primary-color-dark;
-        border-bottom: 2px solid currentColor;
-        background-color: $background-light-dark;
-    }
-
-    i {
-        margin-right: 10px;
-    }
-
 }

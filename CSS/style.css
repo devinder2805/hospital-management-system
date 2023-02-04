@@ -1,11 +1,30 @@
+#logo {
+  height: 40px;
+  width: 100px;
+}
+#logo text {
+  font-size: 30px;
+  font-family: fantasy;
+  stroke: white;
+  stroke-width: 0.5;
+  fill: none;
+  letter-spacing: 2px;
+}
+
 @media screen and (min-width: 900px) {
   #navigation-link {
-    background-color: #5A4FCF;
+    background-color: #2088ff;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  #navigation-link #logo {
+    margin: 30px auto 0px;
   }
   #navigation-link button {
     display: none;
   }
-  #navigation-link div {
+  #navigation-link div#nav-items {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -29,7 +48,7 @@
     height: 15px;
     width: 15px;
     position: absolute;
-    background-color: #5A4FCF;
+    background-color: #2088ff;
     top: 50%;
     left: 100%;
     transform: translate(-50%, -50%) rotate(45deg);
@@ -40,17 +59,18 @@
     position: absolute;
     top: 0;
     left: 115%;
-    color: #5A4FCF;
+    color: #2088ff;
     text-align: center;
     border: 1px solid currentColor;
     border-radius: 5px;
     padding: 10px 10px;
     background: white;
     display: none;
+    z-index: 10;
   }
   #navigation-link a:hover {
     border: 1px solid;
-    background-color: #5A4FCF;
+    background-color: #2088ff;
   }
   #navigation-link a:hover > span {
     display: block;
@@ -58,55 +78,63 @@
 }
 @media screen and (max-width: 900px) {
   #navigation-link {
-    background-color: #5A4FCF;
+    background-color: #2088ff;
     padding: 0px;
-    position: relative;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
   }
-  button {
+  #navigation-link #logo {
+    order: 2;
+  }
+  #navigation-link button {
     height: 40px;
     padding: 0px 20px;
     font-size: 1.2rem;
     text-align: center;
-    background-color: #5A4FCF;
+    background-color: #2088ff;
     border: none;
     color: white;
     cursor: pointer;
+    order: 1;
   }
-  button:hover {
-    background-color: #443b9d;
+  #navigation-link button:hover {
+    background-color: #0275f8;
   }
-  button:hover + div {
+  #navigation-link button:hover + div#nav-items {
     display: block;
   }
-  div {
+  #navigation-link div#nav-items {
     position: absolute;
     top: 100%;
     left: 0;
     padding: 20px;
-    min-height: calc(100vh - 30px);
+    min-height: calc(100vh - 40px);
     display: flex;
     flex-direction: column;
     justify-content: start;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
     display: none;
+    z-index: 100;
+    background-color: white;
   }
-  div:hover {
+  #navigation-link div#nav-items:hover {
     display: block;
   }
-  a {
+  #navigation-link a {
     display: block;
     padding: 5px 10px;
     margin: 10px 0;
-    color: #5A4FCF;
+    color: #2088ff;
     font-size: 1.2rem;
     position: relative;
   }
-  a:hover {
-    color: #443b9d;
+  #navigation-link a:hover {
+    color: #0275f8;
     border-bottom: 2px solid currentColor;
     background-color: rgb(237, 237, 237);
   }
-  i {
+  #navigation-link i {
     margin-right: 10px;
   }
 }
@@ -129,6 +157,12 @@ body {
   }
   #navigation-link {
     width: 100%;
+    z-index: 100;
+  }
+  #content {
+    width: 100vw;
+    padding-top: 40px;
+    z-index: 0;
   }
 }
 @media screen and (min-width: 900px) {
@@ -136,12 +170,10 @@ body {
     display: flex;
   }
   #navigation-link {
-    width: 10%;
+    min-width: 10%;
     min-height: 100vh;
   }
   #content {
-    background-color: red;
     width: 90%;
-    overflow-x: auto;
   }
 }/*# sourceMappingURL=style.css.map */
