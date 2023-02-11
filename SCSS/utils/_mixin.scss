@@ -1,0 +1,9 @@
+@use 'colors' as *;
+
+@mixin button-style($color : $primary-color, $align : center) {
+    color: $color;
+    text-align: $align;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    padding: 10px 10px;
+}

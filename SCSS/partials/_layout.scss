@@ -13,6 +13,9 @@ body {
 }
 
 
+
+
+/* for device smaller than 900px*/
 @media screen and (max-width: $large-device) {
     body {
         display: flex;
@@ -30,18 +33,20 @@ body {
         z-index: 0;
     }    
 }
-
+/* for devices greater than 900px*/
 @media screen and (min-width : $large-device) {
-    body {
+    body{
         display: flex;
     }
 
     #navigation-link {
-        min-width: 10%;
-        min-height: 100vh;
+        width: 10%;
+        height: 100vh;
     }
 
     #content {
+        height: 100vh;
         width: 90%;
+        overflow: auto;
     }
 }

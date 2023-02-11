@@ -1,0 +1,44 @@
+@use '../utils' as *;
+
+
+#contact {
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid $primary-color-dark;
+    padding: 20px;
+    background-image: url(https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=2000);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    h1 {
+        text-align: center;
+        padding: 10px;
+    }
+
+    #contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    form>div {
+        padding: 10px;
+    }
+
+    label,
+    input {
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    #contact-add {
+        padding: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 2;
+    }
+}

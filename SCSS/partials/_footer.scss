@@ -1,0 +1,50 @@
+@use '../utils' as *;
+
+
+#footer{
+    #footUp{
+        background-color: $dark-grey-background-color;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        color: $background-color;
+       
+        &>div{
+            width: 300px;
+            padding: 10px;
+            margin: 10px 20px;
+
+            &>div{
+                margin: 10px auto;
+            }
+        }
+        
+        a{
+            color: white;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+        
+    }
+
+    #footDown{
+        background-color: $dark-background-color;
+        color: grey;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        a{
+            color: grey;
+        }
+        a:hover{
+            color: white;
+        }
+    }
+}

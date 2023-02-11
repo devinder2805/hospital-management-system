@@ -1,36 +1,14 @@
 @use '../utils' as *;
 
-@mixin button-style($color : $primary-color, $align : center) {
-    color: $color;
-    text-align: $align;
-    border: 1px solid currentColor;
-    border-radius: 5px;
-    padding: 10px 10px;
-}
-
-#logo {
-    height: 40px;
-    width: 100px;
-
-    text {
-        font-size: 30px;
-        font-family: fantasy;
-        stroke: white;
-        stroke-width: 0.5;
-        fill: none;
-        letter-spacing: 2px;
-    }
-}
-
 @media screen and (min-width:$large-device) {
     #navigation-link {
         background-color: $primary-color;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
 
         #logo {
-            margin: 30px auto 0px;
+            width: 10vw;
+            position: absolute;
+            top: 0;
+            margin-bottom: 10px;
         }
 
         button {
@@ -40,15 +18,19 @@
         div#nav-items {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
             flex-wrap: nowrap;
             justify-content: center;
-
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            width: 10vw;
+            left: 0;
         }
 
         a {
             display: block;
-            margin: 10px 2px;
+            width: 98%;
+            margin: 5px auto;
             @include button-style($background-color);
             border: none;
             position: relative;
@@ -60,12 +42,13 @@
             height: 15px;
             width: 15px;
             position: absolute;
-            background-color: $primary-color;
+            background-color: $background-color;
+            z-index: 11;
             top: 50%;
-            left: 100%;
+            left: 115%;
             transform: translate(-50%, -50%) rotate(45deg);
-            border-right: 1px solid $background-color;
-            border-top: 1px solid $background-color;
+            border-bottom: 1px solid $primary-color;
+            border-left: 1px solid $primary-color;
 
         }
 

@@ -1,25 +1,12 @@
-#logo {
-  height: 40px;
-  width: 100px;
-}
-#logo text {
-  font-size: 30px;
-  font-family: fantasy;
-  stroke: white;
-  stroke-width: 0.5;
-  fill: none;
-  letter-spacing: 2px;
-}
-
 @media screen and (min-width: 900px) {
   #navigation-link {
     background-color: #2088ff;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
   }
   #navigation-link #logo {
-    margin: 30px auto 0px;
+    width: 10vw;
+    position: absolute;
+    top: 0;
+    margin-bottom: 10px;
   }
   #navigation-link button {
     display: none;
@@ -27,13 +14,18 @@
   #navigation-link div#nav-items {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     flex-wrap: nowrap;
     justify-content: center;
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    width: 10vw;
+    left: 0;
   }
   #navigation-link a {
     display: block;
-    margin: 10px 2px;
+    width: 98%;
+    margin: 5px auto;
     color: white;
     text-align: center;
     border: 1px solid currentColor;
@@ -48,12 +40,13 @@
     height: 15px;
     width: 15px;
     position: absolute;
-    background-color: #2088ff;
+    background-color: white;
+    z-index: 11;
     top: 50%;
-    left: 100%;
+    left: 115%;
     transform: translate(-50%, -50%) rotate(45deg);
-    border-right: 1px solid white;
-    border-top: 1px solid white;
+    border-bottom: 1px solid #2088ff;
+    border-left: 1px solid #2088ff;
   }
   #navigation-link span {
     position: absolute;
@@ -150,6 +143,7 @@ body {
   font-family: monospace;
 }
 
+/* for device smaller than 900px*/
 @media screen and (max-width: 900px) {
   body {
     display: flex;
@@ -165,15 +159,190 @@ body {
     z-index: 0;
   }
 }
+/* for devices greater than 900px*/
 @media screen and (min-width: 900px) {
   body {
     display: flex;
   }
   #navigation-link {
-    min-width: 10%;
-    min-height: 100vh;
+    width: 10%;
+    height: 100vh;
   }
   #content {
+    height: 100vh;
     width: 90%;
+    overflow: auto;
   }
+}
+* {
+  scroll-behavior: smooth;
+}
+
+#logo {
+  height: 40px;
+  width: 100px;
+  z-index: 1000;
+  background-color: #2088ff;
+}
+#logo text {
+  font-size: 30px;
+  font-family: fantasy;
+  stroke: white;
+  stroke-width: 0.5;
+  fill: none;
+  letter-spacing: 2px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: #2088ff;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: #0275f8;
+  border: 1px solid currentColor;
+}
+
+#footer #footUp {
+  background-color: rgb(35, 35, 35);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+#footer #footUp > div {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 20px;
+}
+#footer #footUp > div > div {
+  margin: 10px auto;
+}
+#footer #footUp a {
+  color: white;
+  display: block;
+  margin-bottom: 2px;
+}
+#footer #footUp a:hover {
+  text-decoration: underline;
+}
+#footer #footDown {
+  background-color: rgb(15, 15, 15);
+  color: grey;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#footer #footDown a {
+  color: grey;
+}
+#footer #footDown a:hover {
+  color: white;
+}
+
+#contact {
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #0275f8;
+  padding: 20px;
+  background-image: url(https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=2000);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#contact h1 {
+  text-align: center;
+  padding: 10px;
+}
+#contact #contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#contact form > div {
+  padding: 10px;
+}
+#contact label,
+#contact input {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+}
+#contact #contact-add {
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 2;
+}
+
+@media screen and (max-width: 900px) {
+  #gallery > .column {
+    width: 50%;
+  }
+}
+/* for devices greater than 900px*/
+@media screen and (min-width: 900px) {
+  #gallery > .column {
+    width: 25%;
+  }
+}
+#gallery-heading h1 {
+  color: #0275f8;
+  text-shadow: 3px 3px 3px rgb(15, 15, 15);
+  font-size: 300%;
+}
+
+#gallery {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+#gallery .column {
+  display: flex;
+  flex-direction: column;
+}
+#gallery img {
+  width: 100%;
+  vertical-align: middle;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#gallery figure {
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#gallery figure:hover {
+  border: 1px solid rgb(15, 15, 15);
+}
+#gallery figcaption {
+  padding: 8px;
+  font-weight: bold;
+  background-color: rgb(237, 237, 237);
+}
+
+#gallery > .column {
+  display: flex;
+  flex-direction: column;
+}
+
+#gallery img {
+  width: 100%;
+  vertical-align: middle;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
