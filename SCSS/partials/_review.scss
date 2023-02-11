@@ -1,1 +1,75 @@
 @use '../utils' as *;
+
+#review {
+    padding: 10px;
+    background-color: rgb(244, 238, 194);
+  
+    #top{
+        padding: 10px;
+        font-size: 300%;
+        text-align: center;
+        color: $primary-color-dark;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    #outerBox{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    .box{
+        width: 300px;
+        margin: 10px auto;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding-top: 20px;
+        background-color: $background-light-dark;
+    }
+
+    .box:hover img{
+        border: 5px dashed $primary-color;
+    }
+
+    .box:hover{
+        box-shadow: 3px 3px 10px $primary-color-dark;
+    }
+
+    .box:hover .name{
+        text-decoration: underline;
+    }
+
+    .photo{
+        width: 100px;
+        margin: auto;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        border-radius: 50%;
+    }
+
+    .stars{
+        font-weight: bold;
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    .review{
+        line-height: 1.3rem;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    .name {
+        padding: 5px;
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+    }
+    
+}
+

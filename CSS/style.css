@@ -270,7 +270,7 @@ body {
   justify-content: space-around;
 }
 #contact form > div {
-  padding: 10px;
+  padding: 10px 0px;
 }
 #contact label,
 #contact input {
@@ -305,7 +305,8 @@ body {
 }
 
 #gallery {
-  margin: 10px;
+  padding: 10px;
+  background-color: rgb(232, 249, 253);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -345,4 +346,184 @@ body {
   vertical-align: middle;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+#review {
+  padding: 10px;
+  background-color: rgb(244, 238, 194);
+}
+#review #top {
+  padding: 10px;
+  font-size: 300%;
+  text-align: center;
+  color: #0275f8;
+  text-shadow: 1px 1px 3px #000;
+}
+#review #outerBox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+#review .box {
+  width: 300px;
+  margin: 10px auto;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding-top: 20px;
+  background-color: rgb(237, 237, 237);
+}
+#review .box:hover img {
+  border: 5px dashed #2088ff;
+}
+#review .box:hover {
+  box-shadow: 3px 3px 10px #0275f8;
+}
+#review .box:hover .name {
+  text-decoration: underline;
+}
+#review .photo {
+  width: 100px;
+  margin: auto;
+}
+#review img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+}
+#review .stars {
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+}
+#review .review {
+  line-height: 1.3rem;
+  padding: 10px;
+  text-align: center;
+}
+#review .name {
+  padding: 5px;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#blogs {
+  padding: 10px;
+  background-color: rgb(232, 249, 253);
+}
+#blogs h1 {
+  color: #0275f8;
+  text-shadow: 3px 3px 3px #000;
+  font-size: 300%;
+  text-align: center;
+  padding: 10px;
+}
+#blogs #outerBox1 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+#blogs #outerBox1 .box {
+  width: min(100%, 500px);
+  margin: 10px 5px;
+  background-color: rgb(237, 237, 237);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+#blogs #outerBox1 .box:hover {
+  border: 1px solid black;
+}
+#blogs #outerBox1 img {
+  width: 100%;
+}
+#blogs #outerBox1 .que {
+  font-size: 20px;
+  font-weight: bold;
+  color: #353535;
+  padding: 10px;
+}
+#blogs #outerBox1 .que:hover {
+  text-decoration: underline;
+}
+#blogs #outerBox1 p {
+  padding: 10px;
+}
+#blogs #outerBox1 .author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: right;
+}
+
+#our-doctors {
+  padding: 10px;
+  background-color: rgb(244, 238, 194);
+}
+#our-doctors h1 {
+  color: #2088ff;
+  text-shadow: 3px 3px 3px #000;
+  font-size: 300%;
+  text-align: center;
+}
+#our-doctors #outerBox2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 100px;
+}
+#our-doctors .box {
+  border: 2px solid #2193b0;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  background-color: rgb(245, 255, 255);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+#our-doctors .innerBox1 {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  border: 2px solid #2088ff;
+}
+#our-doctors .innerBox2 {
+  margin: 5px auto;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+#our-doctors .innerBox3 {
+  margin: 5px 0;
+  text-align: center;
+  padding: 5px;
+  color: #2088ff;
+  text-decoration: underline;
+}
+#our-doctors .book-appointement a {
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  min-width: 10%;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #2088ff;
+}
+#our-doctors .book-appointement a:hover {
+  color: #2088ff;
+  background-color: white;
+  border: 2px solid #2088ff;
 }/*# sourceMappingURL=style.css.map */
